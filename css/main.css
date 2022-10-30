@@ -135,6 +135,9 @@ header {
 }
 
 .blue-container table {
+  border: 2px solid;
+  border-color: #ffffff;
+  border-radius: 30px;
   padding: 2px;
   width: 100%;
   font-size: 1.5em;
@@ -143,7 +146,8 @@ header {
 }
 
 .blue-container td {
-  padding-top: 20px
+  padding-top: 20px;
+  font-size: small;
 }
 
 .blue-container hr {
