@@ -26,6 +26,20 @@ ul {
   width: 130px;
 }
 
+.logo-small {
+  max-width: 20px;
+  position: relative;
+  top: 6px
+}
+
+.stroke-text {
+  float: right;
+  font-size:18px;
+  stroke:rgb(0, 0, 0);
+  stroke-width:1.8px;
+  fill:none;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -41,6 +55,14 @@ header {
 }
 
 .server {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -moz-user-drag: none;
+  -khtml-user-drag: none;
+  -webkit-user-drag: none;
+  user-drag: none;
   width: 70%;
   margin: 2em auto 2em 25%;
 }
@@ -66,6 +88,11 @@ header {
 
 .blue-container ul {
   transform: skewY(2deg);
+}
+
+.blue-container p {
+  transform: skewY(2deg);
+  color: #000000;
 }
 
 .blue-container:before {
@@ -107,6 +134,28 @@ header {
   width: 8%;
 }
 
+.blue-container table {
+  padding: 2px;
+  width: 100%;
+  font-size: 1.5em;
+  padding-bottom: 50px;
+  transform: skewY(2deg);
+}
+
+.blue-container td {
+  padding-top: 20px
+}
+
+.blue-container hr {
+  width: 80%;
+  background-color: #000000;
+}
+
+.blue-container a {
+  color: #000000;
+  font-weight: bolder;
+}
+
 .gray-container {
   background-color: #f6f6f6;
   padding: 4em 0 2em;
@@ -132,7 +181,7 @@ h2 {
 }
 
 .cta {
-  background-color: #00cc80;
+  background-color: #00cc58;
   width: calc(100% - 1em);
   display: block;
   color: white;
@@ -147,7 +196,7 @@ h2 {
 
 .footer-container {
   width: 100%;
-  background-color: #3d444a;
+  background-color: #262626;
   color: white;
   padding: 3em 0;
   border-top-right-radius: 40px;
@@ -162,7 +211,7 @@ h2 {
   content: "";
   width: 40px;
   height: 40px;
-  background-color: #3d444a;
+  background-color: #262626;
   position: absolute;
   top: -39px;
   left: 0;
