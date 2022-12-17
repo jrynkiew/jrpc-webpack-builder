@@ -4,6 +4,7 @@ To initialize the repository, run the following commands:
 
 ## Requirements
 Node v19.3.0
+
 NPM v9.2.0
 
 `git clone https://github.com/jrynkiew/jrpc-webpack-builder.git`
