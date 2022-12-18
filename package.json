@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jrynkiew/jrpc-web-server.git"
+    "url": "git+https://github.com/jrynkiew/jrpc-webpack-builder.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jrynkiew/jrpc-web-server/issues"
+    "url": "https://github.com/jrynkiew/jrpc-webpack-builder/issues"
   },
-  "homepage": "https://github.com/jrynkiew/jrpc-web-server#readme",
+  "homepage": "https://github.com/jrynkiew/jrpc-webpack-builder#readme",
   "devDependencies": {
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.3",

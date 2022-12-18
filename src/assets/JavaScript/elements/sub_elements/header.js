@@ -7,12 +7,6 @@ export class Header {
         this.head = document.querySelector('head');
         this.title = document.createElement('title');
 
-        let metaOptions = [
-            { charset: 'UTF-8' },
-            { name: 'Viewport', content: 'width=device-width, initial-scale=1.0' },
-            { httpEquiv: 'X-UA-Compatible', content: 'ie=edge' }
-        ]
-
         let favIcons = [
             { rel: 'apple-touch-icon' },
             { rel: 'apple-touch-startup-image' },
@@ -25,21 +19,6 @@ export class Header {
             setFavicon.href = favicon;
             
             this.head.appendChild(setFavicon);
-        }, this);
-
-        metaOptions.forEach(function(meta){
-            let metaOption = document.createElement('meta');
-            
-            if (metaOption.charset)
-                metaOption.charset = meta.charset;
-            if (metaOption.name)
-                metaOption.name = meta.name;
-            if (metaOption.content)
-                metaOption.content = meta.content;
-            if (metaOption.httpEquiv)
-                metaOption.httpEquiv = meta.httpEquiv;
-            
-            this.head.appendChild(metaOption);
         }, this);
 
         this.title.innerText = 'JRPC Alpha Main Page';
