@@ -126,4 +126,59 @@ export default class helpers {
 
         return nav
     }
+
+    createContainerElement() {
+        const container = document.createElement('div');
+        container.classList.add('container');
+
+        return container;
+    }
+
+    generateTable(generatedItemList) {
+        const table = document.createElement('table');
+        const tableHeader1 = document.createElement('th');
+        const tableHeader2 = document.createElement('th');
+
+        table.appendChild(tableHeader1);
+        table.appendChild(tableHeader2);
+
+        tableHeader1.innerHTML = 'generated files';
+        tableHeader2.innerHTML = 'file information';
+
+        let itemList = [
+            { link: 'iotex-desktop-wallet-1.0.23.AppImage', description: '-rwxrwxrwx 1 jeremi jeremi 4695 Oct 29 22:55' },
+            { link: 'iotex-desktop-wallet-1.0.23.AppImage', description: '-rwxrwxrwx 1 jeremi jeremi 4695 Oct 29 22:55' },
+            { link: 'iotex-desktop-wallet-1.0.23.AppImage', description: '-rwxrwxrwx 1 jeremi jeremi 4695 Oct 29 22:55' },
+            { link: 'iotex-desktop-wallet-1.0.23.AppImage', description: '-rwxrwxrwx 1 jeremi jeremi 4695 Oct 29 22:55' },
+            { link: 'iotex-desktop-wallet-1.0.23.AppImage', description: '-rwxrwxrwx 1 jeremi jeremi 4695 Oct 29 22:55' },
+            { link: 'iotex-desktop-wallet-1.0.23.AppImage', description: '-rwxrwxrwx 1 jeremi jeremi 4695 Oct 29 22:55' }
+        ]
+
+        itemList.forEach(function(generatedItem){
+            let setGeneratedItem = document.createElement('tr');
+            let link = document.createElement('a');
+            let linkDescription = document.createElement('td');
+            let fileInfo = document.createElement('td');
+
+            link.href = 'iotex-desktop-wallet-1.0.23.AppImage';
+            link.innerHTML = generatedItem.link
+            linkDescription.appendChild(link);
+            fileInfo.innerHTML = generatedItem.description;
+
+            setGeneratedItem.appendChild(linkDescription);
+            setGeneratedItem.appendChild(fileInfo);
+
+            table.appendChild(setGeneratedItem);
+        }, table);
+
+        return table;
+    }
+
+    generateTableInfoParagraph(container, currencyImage) {
+        container.appendChild(document.createElement('br'));
+        let info = document.createElement('p');
+        info.innerHTML = 'Cost 1 <img src=' + currencyImage + ' alt="JRPC" class="logo-small" /> JRPC per file. Scroll down to bottom of page to buy JRPC.';
+
+        container.appendChild(info);
+    }
 }
