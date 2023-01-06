@@ -127,9 +127,9 @@ export default class helpers {
         return nav
     }
 
-    createContainerElement() {
+    createContainerElement(containerClass) {
         const container = document.createElement('div');
-        container.classList.add('container');
+        container.classList.add(containerClass);
 
         return container;
     }
@@ -180,5 +180,38 @@ export default class helpers {
         info.innerHTML = 'Cost 1 <img src=' + currencyImage + ' alt="JRPC" class="logo-small" /> JRPC per file. Scroll down to bottom of page to buy JRPC.';
 
         container.appendChild(info);
+    }
+
+    createUnorderedList() {
+        let element = document.createElement('ul');
+
+        return element;
+    }
+
+    populateUnorderedList(object) {
+        let list = this.createUnorderedList();
+
+        object.forEach(function(item){
+            let currentItem = document.createElement('li');
+            let subItem = document.createElement('figure');
+
+            let image = document.createElement('img');
+            image.setAttribute('src', item.img);
+
+            let text = document.createElement('blockquote');
+            text.innerHTML = item.blockquote;
+
+            let figcaption = document.createElement('figcaption');
+            figcaption.innerHTML = item.figcaption;
+
+            currentItem.appendChild(subItem);
+            subItem.appendChild(image);
+            subItem.appendChild(text);
+            subItem.appendChild(figcaption);           
+            
+            list.appendChild(currentItem);           
+        }, list);
+
+        return list;
     }
 }
