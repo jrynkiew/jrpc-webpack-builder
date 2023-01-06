@@ -32,7 +32,7 @@ export default class helpers {
 
     renderText(text, _class) {
         var paragraph = document.createElement('p');
-        if (_class !== 0)
+        if (_class !== null)
             paragraph.classList.add(_class);
         paragraph.innerHTML = text;
 
@@ -191,15 +191,36 @@ export default class helpers {
         container.appendChild(info);
     }
 
-    createUnorderedList(_class) {
-        let element = document.createElement('ul');
-        element.classList.add(_class);
+    createUnorderedList(_class, _object) {
+        let list = document.createElement('ul');
+        
+        if (_class !== null)
+            list.classList.add(_class);
+
+        if (_object !== null)  
+        {
+            _object.forEach(element => {
+                if (element !== null)
+                    list.appendChild(element);
+            }, list);
+        }  
+
+        return list;
+    }
+
+    createOrderedList(_class, innerHTML) {
+        let element = document.createElement('li');
+        
+        if (_class !== null)
+            element.classList.add(_class);
+
+        element.innerHTML = innerHTML;
 
         return element;
     }
 
     populateUnorderedList(object) {
-        let list = this.createUnorderedList(null);
+        let list = this.createUnorderedList(null, null);
 
         object.forEach(function(item){
             let currentItem = document.createElement('li');

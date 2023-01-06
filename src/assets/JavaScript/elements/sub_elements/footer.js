@@ -8,12 +8,23 @@ export class Footer {
   constructor() {
     this.helpers = new helpers();
     this.name = 'Footer';
+
+    this.contactList = []
     this.body = document.querySelector('body');
     this.footer = this.generateFooter();
     this.body.appendChild(this.footer);
   }
   
+  createContactLinksList() {
+    this.contactList[0] = this.helpers.createOrderedList(null, '<a href="#">Terms of Service</a>');
+    this.contactList[1] = this.helpers.createOrderedList(null, '<a href="#">Policy</a>');
+    let list = this.helpers.createUnorderedList('footer-links', this.contactList);
+
+    return list;
+  }
+
   generateFooter() {
+    let footer = document.createElement('footer');
     let footerContainer = this.helpers.createContainerElement('footer-container');
     let container = this.helpers.createContainerElement('container');
 
@@ -34,10 +45,12 @@ export class Footer {
     );
 
     container.appendChild(
-        this.helpers.createUnorderedList('footer-links')
+        this.createContactLinksList()
     );
 
-    return footerContainer;
+    footer.appendChild(footerContainer);
+
+    return footer;
   }
 
 }

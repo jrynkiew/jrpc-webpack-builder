@@ -240,6 +240,7 @@ ul.footer-links {
 
 ul.footer-links li {
   display: inline-block;
+  padding-right: 1%;
 }
 
 ul.footer-links li a {
