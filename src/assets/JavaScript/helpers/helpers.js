@@ -114,7 +114,10 @@ export default class helpers {
         menuItemList.forEach(function(item){
             let currentItemListElement = document.createElement('li');
             let currentItemLinkElement = document.createElement('a');
-            currentItemLinkElement.setAttribute('href', '#');
+            if (String(item) === 'home')
+                currentItemLinkElement.setAttribute('href', '3d/index.html');
+            else
+                currentItemLinkElement.setAttribute('href', '#');
             currentItemLinkElement.innerHTML = String(item);
             currentItemListElement.appendChild(currentItemLinkElement);
             menuItems.appendChild(currentItemListElement);
