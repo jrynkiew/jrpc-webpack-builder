@@ -25,10 +25,12 @@ export class Body {
         ]
         this.menu = this.menuSection();
         this.itemList = this.itemListSection();
-        this.companyInfo = this.bottomSection(this.bottomHTMLlist);
+        this.companyInfo = this.generateCompanyInfo(this.bottomHTMLlist);
+        this.bottomSection = this.generateBottomSection()
         this.body.appendChild(this.menu);
         this.body.appendChild(this.itemList);
         this.body.appendChild(this.companyInfo);
+        this.body.appendChild(this.bottomSection);
     }
     
     menuSection() {
@@ -69,7 +71,7 @@ export class Body {
         return itemListSectionContainer;
     }
     
-    bottomSection(htmlList) {
+    generateCompanyInfo(htmlList) {
         let infoSectionContainer = this.helpers.createContainerElement('grey-container');
         let container = this.helpers.createContainerElement('container');
 
@@ -79,20 +81,22 @@ export class Body {
 
         infoSectionContainer.appendChild(container);
 
-        let container2 = this.helpers.createContainerElement('container');
+        return infoSectionContainer;
+    }
+
+    generateBottomSection() {
+        let container = this.helpers.createContainerElement('container');
         let h2 = document.createElement('h2');
         h2.innerHTML = 'Get more tokens!';
-        container2.appendChild(h2);
+        container.appendChild(h2);
 
         let link = document.createElement('a');
         link.setAttribute('href', '#');
         link.classList.add('cta');
         link.innerHTML = 'Buy JRPC';
 
-        container2.appendChild(link);
+        container.appendChild(link);
 
-        infoSectionContainer.appendChild(container2);
-
-        return infoSectionContainer;
+        return container;
     }
   }

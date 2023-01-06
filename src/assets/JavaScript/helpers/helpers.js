@@ -30,6 +30,15 @@ export default class helpers {
         return svg;
     }
 
+    renderText(text, _class) {
+        var paragraph = document.createElement('p');
+        if (_class !== 0)
+            paragraph.classList.add(_class);
+        paragraph.innerHTML = text;
+
+        return paragraph;
+    }
+
     createTopSection(sectionImage_path, scrollImage_path) {
         var section = document.createElement('section');
         var sectionImage = document.createElement('img');
@@ -182,14 +191,15 @@ export default class helpers {
         container.appendChild(info);
     }
 
-    createUnorderedList() {
+    createUnorderedList(_class) {
         let element = document.createElement('ul');
+        element.classList.add(_class);
 
         return element;
     }
 
     populateUnorderedList(object) {
-        let list = this.createUnorderedList();
+        let list = this.createUnorderedList(null);
 
         object.forEach(function(item){
             let currentItem = document.createElement('li');

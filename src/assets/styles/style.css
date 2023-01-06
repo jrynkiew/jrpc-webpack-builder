@@ -160,13 +160,13 @@ header {
   font-weight: bolder;
 }
 
-.gray-container {
+.grey-container {
   background-color: #f6f6f6;
   padding: 4em 0 2em;
   margin-top: -3%;
 }
 
-.gray-container ul li:first-child {
+.grey-container ul li:first-child {
   margin-bottom: 2em;
 }
 
@@ -201,7 +201,7 @@ h2 {
 .footer-container {
   width: 100%;
   background-color: #262626;
-  color: white;
+  color: #f6f6f6;
   padding: 3em 0;
   border-top-right-radius: 40px;
   transform: skewY(2deg);
@@ -325,7 +325,7 @@ nav ul li a:hover {
     padding: 0 0.8em;
   }
 
-  .gray-container ul {
+  .grey-container ul {
     display: flex;
   }
 
@@ -343,7 +343,7 @@ nav ul li a:hover {
     margin: 0 0 4% 0;
   }
 
-  .gray-container ul {
+  .grey-container ul {
     margin: 4% 0 0;
   }
 }
@@ -427,7 +427,7 @@ nav ul li a:hover {
     font-size: 1.3em;
   }
 
-  .gray-container {
+  .grey-container {
     padding: 6em 0 4em;
   }
 
