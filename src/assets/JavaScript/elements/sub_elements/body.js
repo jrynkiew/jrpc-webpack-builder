@@ -43,7 +43,7 @@ export class Body {
             this.helpers.renderImage(logo, 'logo', 'logo')
         );
         header.appendChild(
-            this.helpers.createSVGlogoText('40%', 'Blockchain Services', '1%', '55%')
+            this.helpers.createSVGlogoText('27%', 'Services', '1%', '60%')
         )
         header.appendChild(
             this.helpers.createNavigation(openMenu, closeMenu, this.menuList)
