@@ -43,14 +43,14 @@ export class Body {
             this.helpers.renderImage(logo, 'logo', 'logo')
         );
         header.appendChild(
-            this.helpers.createSVGlogoText('27%', 'Services', '1%', '60%')
+            this.helpers.createSVGlogoText('27%', 'Services', '1%', '55%')
         )
         header.appendChild(
             this.helpers.createNavigation(openMenu, closeMenu, this.menuList)
         );
 
         container.appendChild(
-            this.helpers.createTopSection(topSection, scroll)
+            this.helpers.createTopSection(topSection, scroll, 'This page is still under construction!')
         )
 
         return container;

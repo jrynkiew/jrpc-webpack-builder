@@ -39,7 +39,7 @@ export default class helpers {
         return paragraph;
     }
 
-    createTopSection(sectionImage_path, scrollImage_path) {
+    createTopSection(sectionImage_path, scrollImage_path, headerText) {
         var section = document.createElement('section');
         var sectionImage = document.createElement('img');
         var sectionHeader = document.createElement('h1');
@@ -55,7 +55,7 @@ export default class helpers {
         sectionImage.setAttribute('src', sectionImage_path);
         sectionImage.setAttribute('alt', 'server graphic');
         
-        sectionHeader.innerHTML = 'Your files are ready for download!';
+        sectionHeader.innerHTML = headerText;
 
         sectionParagraph.classList.add('subhead');
         sectionParagraph.innerHTML = 'Scroll down for the list of your generated files.';
