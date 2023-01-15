@@ -12,6 +12,32 @@ export default class helpers {
         return img;
     }
 
+    createElement(elementName) {
+        const element = document.createElement(elementName);
+        return element;
+    }
+
+    setAttribute(element, attribute, value) {
+        element.setAttribute(attribute, value);
+    }
+
+    createSVGElement(xmlns_string, width_percent) {
+        var svg = document.createElementNS(xmlns_string, 'svg');
+        svg.setAttributeNS(null, 'version', '1.1');
+        svg.setAttributeNS(null, 'width', width_percent);
+
+        return svg;
+    }
+
+    appendSVGElement(svgElement, text_string, textX_percent, textY_percent) {
+        var txt = document.createElementNS(svgElement.namespaceURI, 'text');
+        txt.innerHTML = text_string;
+        txt.setAttributeNS(null, 'x', textX_percent);
+        txt.setAttributeNS(null, 'y', textY_percent);
+        txt.classList.add('stroke-text');
+        svgElement.appendChild(txt);
+    }
+
     createSVGlogoText(width_percent, text_string, textX_percent, textY_percent) {
         var xmlns ='http://www.w3.org/2000/svg';
 
@@ -26,7 +52,6 @@ export default class helpers {
         txt.classList.add('stroke-text');
 
         svg.appendChild(txt);
-
         return svg;
     }
 
@@ -117,6 +142,9 @@ export default class helpers {
             if (String(item) === 'home')
                 currentItemLinkElement.setAttribute('href', '3d/index.html');
             else
+            if (String(item) === 'contact')
+            currentItemLinkElement.setAttribute('href', '#contact');
+            else
                 currentItemLinkElement.setAttribute('href', '#');
             currentItemLinkElement.innerHTML = String(item);
             currentItemListElement.appendChild(currentItemLinkElement);
@@ -154,28 +182,28 @@ export default class helpers {
         table.appendChild(tableHeader1);
         table.appendChild(tableHeader2);
 
-        tableHeader1.innerHTML = 'generated files';
-        tableHeader2.innerHTML = 'file information';
+        tableHeader1.innerHTML = 'service';
+        tableHeader2.innerHTML = 'cost';
 
-        let itemList = [
-            { link: 'iotex-desktop-wallet-1.0.23.AppImage', description: '-rwxrwxrwx 1 jeremi jeremi 4695 Oct 29 22:55' },
-            { link: 'iotex-desktop-wallet-1.0.23.AppImage', description: '-rwxrwxrwx 1 jeremi jeremi 4695 Oct 29 22:55' },
-            { link: 'iotex-desktop-wallet-1.0.23.AppImage', description: '-rwxrwxrwx 1 jeremi jeremi 4695 Oct 29 22:55' },
-            { link: 'iotex-desktop-wallet-1.0.23.AppImage', description: '-rwxrwxrwx 1 jeremi jeremi 4695 Oct 29 22:55' },
-            { link: 'iotex-desktop-wallet-1.0.23.AppImage', description: '-rwxrwxrwx 1 jeremi jeremi 4695 Oct 29 22:55' },
-            { link: 'iotex-desktop-wallet-1.0.23.AppImage', description: '-rwxrwxrwx 1 jeremi jeremi 4695 Oct 29 22:55' }
-        ]
+        // let itemList = [
+        //     { link: 'iotex-desktop-wallet-1.0.23.AppImage', description: '-rwxrwxrwx 1 jeremi jeremi 4695 Oct 29 22:55' },
+        //     { link: 'iotex-desktop-wallet-1.0.23.AppImage', description: '-rwxrwxrwx 1 jeremi jeremi 4695 Oct 29 22:55' },
+        //     { link: 'iotex-desktop-wallet-1.0.23.AppImage', description: '-rwxrwxrwx 1 jeremi jeremi 4695 Oct 29 22:55' },
+        //     { link: 'iotex-desktop-wallet-1.0.23.AppImage', description: '-rwxrwxrwx 1 jeremi jeremi 4695 Oct 29 22:55' },
+        //     { link: 'iotex-desktop-wallet-1.0.23.AppImage', description: '-rwxrwxrwx 1 jeremi jeremi 4695 Oct 29 22:55' },
+        //     { link: 'iotex-desktop-wallet-1.0.23.AppImage', description: '-rwxrwxrwx 1 jeremi jeremi 4695 Oct 29 22:55' }
+        // ]
 
-        itemList.forEach(function(generatedItem){
+        generatedItemList.forEach(function(generatedItem){
             let setGeneratedItem = document.createElement('tr');
             let link = document.createElement('a');
             let linkDescription = document.createElement('td');
             let fileInfo = document.createElement('td');
 
             link.href = 'iotex-desktop-wallet-1.0.23.AppImage';
-            link.innerHTML = generatedItem.link
+            link.innerHTML = generatedItem.key
             linkDescription.appendChild(link);
-            fileInfo.innerHTML = generatedItem.description;
+            fileInfo.innerHTML = generatedItem.value;
 
             setGeneratedItem.appendChild(linkDescription);
             setGeneratedItem.appendChild(fileInfo);
@@ -189,7 +217,7 @@ export default class helpers {
     generateTableInfoParagraph(container, currencyImage) {
         container.appendChild(document.createElement('br'));
         let info = document.createElement('p');
-        info.innerHTML = 'Cost 1 <img src=' + currencyImage + ' alt="JRPC" class="logo-small" /> JRPC per file. Scroll down to bottom of page to buy JRPC.';
+        info.innerHTML = 'Cost in equivalent <img src=' + currencyImage + ' alt="JRPC" class="logo-small" /> JRPC per service. Scroll down to bottom of page to buy JRPC.';
 
         container.appendChild(info);
     }

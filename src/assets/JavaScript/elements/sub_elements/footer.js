@@ -40,6 +40,9 @@ export class Footer {
 
     container.appendChild(link);
 
+    let aboutMe = this.helpers.createElement('p');
+    aboutMe.innerHTML = "I am a developer"
+    container.appendChild(aboutMe);
     container.appendChild(
         this.helpers.renderText('Jeremi Rynkiewicz<br />Kobierzyńska 168A/9, Kraków, Poland, 30-382', null)
     );
